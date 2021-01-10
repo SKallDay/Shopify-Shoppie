@@ -1,7 +1,7 @@
 .query__container {
- width: 60%;
+ width: 70%;
  overflow-y: scroll;
- max-height: 500px;
+ box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.68);
 }
 
 .query__heading {

@@ -1,10 +1,11 @@
 .itemCard__container {
   width: 200px;
   margin: 15px;
-  padding: 10px;
+  padding: 20px;
   background-color: #fbf7ed;
   border-radius: 3px;
   border: 3px solid #008060;
+  justify-items: stretch;
 }
 
 .itemCard__text {
@@ -14,6 +15,7 @@
 
 .itemCard__image {
   width: 100%;
+  height: 80%;
 }
 
 
