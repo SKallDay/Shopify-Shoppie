@@ -1,0 +1,10 @@
+.query__container {
+ width: 70%;
+ overflow-y: scroll;
+ height: 550px;
+}
+
+.query__itemCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+}

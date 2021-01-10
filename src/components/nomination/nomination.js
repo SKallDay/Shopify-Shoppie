@@ -1,4 +1,5 @@
 import React from 'react';
+import './nomination.css';
 
 // react component
 export const Nominations = ({
@@ -7,7 +8,7 @@ export const Nominations = ({
 }) => {
 
   return (
-   <>
+   <div className="nomination__container">
     <p>Nominations</p>
     {nominations? 
       nominations.map((item) => (
@@ -19,7 +20,7 @@ export const Nominations = ({
         </>
       ))
     :''}
-   </>
+   </div>
   );
 };
 
