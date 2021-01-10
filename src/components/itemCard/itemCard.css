@@ -1,8 +1,35 @@
 .itemCard__container {
   width: 200px;
-  margin: 20px;
+  margin: 15px;
+  padding: 10px;
+  background-color: #fbf7ed;
+  border-radius: 3px;
+  border: 3px solid #008060;
+}
+
+.itemCard__text {
+  margin: 5px 0 10px 0px;
+  text-transform: capitalize;
 }
 
 .itemCard__image {
   width: 100%;
 }
+
+
+.itemCard__button {
+  color: #fff;
+  background-color: #008060;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 14px;
+  border: none;
+}
+
+.disabled {
+ background-color: #679086;
+ cursor: none;
+}
+

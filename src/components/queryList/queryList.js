@@ -5,7 +5,8 @@ import './queryList.css';
 export const QueryList = ({ 
   queryResults,
   addToNominations,
-  nominations 
+  nominations,
+  query 
 }) => {
 
   const getNomination = (item) => {
@@ -14,7 +15,9 @@ export const QueryList = ({
 
   return (
     <div className="query__container">
-      <h3 className="query__heading">Query List</h3>
+      <h3 className="query__heading">
+        {query ? `Movies result for "${query}"  Found: `: 'Movie results:'}
+      </h3>
       <div className="query__itemCardContainer">
         {queryResults
           && queryResults.map((item) => (

@@ -9,15 +9,15 @@ export const Nominations = ({
 
   return (
    <div className="nomination__container">
-    <p>Nominations</p>
+    <h3 className="nomination__heading">Nominations</h3>
     {nominations? 
       nominations.map((item) => (
-        <>
-        <p>{item.Title}</p>
-        <button onClick={() => removeNominee(item)}>
-          remove
+        <div className="nomination__card">
+        <h5 className="nomination__text">{item.Title}</h5>
+        <button class="button"onClick={() => removeNominee(item)}>
+          Remove
         </button>
-        </>
+        </div>
       ))
     :''}
    </div>

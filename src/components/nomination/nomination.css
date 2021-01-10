@@ -1,3 +1,36 @@
 .nomination__container {
+  padding: 20px;
   width: 30%;
+  height: 500px;
+  overflow-y: scroll;
+  max-height: 450px;
+  box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.68);
+}
+
+.nomination__heading {
+}
+
+.nomination__card {
+  border: 3px solid #008060;
+  border-radius: 3px;
+  padding: 0px 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px 0px;
+}
+
+.nomination__text {
+  margin: 5px 0 10px 0px;
+  text-transform: capitalize;
+}
+
+.button {
+  color: #fff;
+  background-color: #008060;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 14px;
+  border: none;
 }

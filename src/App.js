@@ -79,7 +79,7 @@ function App() {
     <div className="App">
       <main className="app__main">
         <header className="app__header">
-          <h1>The Shoppies</h1>
+          <h1 className="app__heading">The Shoppies</h1>
         </header>
         <SearchBar queryBySearch={queryBySearch} />
         <section className="app__querySection">
@@ -87,6 +87,7 @@ function App() {
           queryResults={queryResults}
           addToNominations={addToNominations}
           nominations={nominations}
+          query={query}
         />
         <Nomiations nominations={nominations} removeNominee={removeNominee} />
         </section>
