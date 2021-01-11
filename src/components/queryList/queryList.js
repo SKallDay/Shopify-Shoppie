@@ -1,14 +1,13 @@
-import React from "react"; 
+import React from "react";
 import ItemCard from "../itemCard/itemCard";
-import './queryList.css';
+import "./queryList.css";
 
-export const QueryList = ({ 
+export const QueryList = ({
   queryResults,
   addToNominations,
   nominations,
-  query 
+  query,
 }) => {
-
   const getNomination = (item) => {
     addToNominations(item);
   };
@@ -16,16 +15,19 @@ export const QueryList = ({
   return (
     <div className="query__container">
       <h3 className="query__heading">
-        {query ? `Movies result for "${query}"  Found: `: 'Movie results:'}
+        {query ? `Movies result for "${query}"  Found: ` : "Movie results:"}
       </h3>
       <div className="query__itemCardContainer">
-        {queryResults
-          && queryResults.map((item) => (
-              <>
-              <ItemCard item={item} nominations={nominations} getNomination={getNomination}></ItemCard>
-              </>
-            ))
-          }
+        {queryResults &&
+          queryResults.map((item) => (
+            <>
+              <ItemCard
+                item={item}
+                nominations={nominations}
+                getNomination={getNomination}
+              ></ItemCard>
+            </>
+          ))}
       </div>
     </div>
   );

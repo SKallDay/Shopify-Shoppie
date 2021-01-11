@@ -14,9 +14,16 @@
 .search__form {
   align-self: center;
   display: flex;
-  width: 80%;
+  width: 50%;
+}
+
+.search__label {
+  font-weight: 700;
+  text-transform: capitalize;
+  padding: 0px 5px;
 }
 
 .search__input {
   width: 100%;
+  padding: 2px;
 }

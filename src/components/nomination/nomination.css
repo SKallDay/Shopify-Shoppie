@@ -1,7 +1,6 @@
 .nomination__container {
   padding: 20px;
   width: 20%;
-  border: 3px solid #b0b8b6;
   overflow-y: scroll;
   box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.68);
 }
@@ -33,4 +32,8 @@
   border-radius: 3px;
   font-size: 14px;
   border: none;
+}
+
+.display-none {
+  display: none;
 }

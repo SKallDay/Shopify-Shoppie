@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import "./searchBar.css";
 
 // react component
-export const SearchBar = ({ queryBySearch }) => {
+export const SearchBar = ({ 
+  queryBySearch
+ }) => {
   const [search, setSearch] = useState("");
 
   const getSearch = (e) => {
@@ -14,11 +16,12 @@ export const SearchBar = ({ queryBySearch }) => {
     queryBySearch(search);
   };
 
+
   return (
     <div className="search__container">
       <h3 className="search__heading">Movie titles</h3>
       <form className="search__form" onSubmit={handleFormSumbit}>
-        <label aria-label="Search for Movies">Search:</label>
+        <label className="search__label" aria-label="Search for Movies">Search:</label>
         <input
           aria-label="Search for movies"
           className="search__input"

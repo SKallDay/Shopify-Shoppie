@@ -1,3 +1,6 @@
+.query__placeHolderContainer {
+  width: 100%;
+}
 .query__container {
  width: 70%;
  overflow-y: scroll;
@@ -6,6 +9,10 @@
 
 .query__heading {
   padding: 0px 35px;
+}
+
+.query__placeholderImage {
+  width: 100%;
 }
 
 .query__itemCardContainer {

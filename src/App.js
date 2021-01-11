@@ -3,7 +3,8 @@ import SearchBar from "./components/searhBar/searchBar";
 import Nomiations from "./components/nomination/nomination";
 import QueryList from "./components/queryList/queryList";
 import Banner from "./components/banner/banner";
-import './App.css';
+import swal from "sweetalert";
+import "./App.css";
 
 function App() {
   const [nominations, setNominations] = useState([]);
@@ -31,10 +32,16 @@ function App() {
     if (nominations.length < 5) {
       const Noms = [...nominations, item];
       setNominations(Noms);
+      swal(
+        `${item.Title}`,
+        "Has been added to your Nominations List!",
+        "success"
+      );
     }
   };
 
   const removeNominee = (item) => {
+    swal(`You removed ${item.Title} from your nominations`, "", "warning");
     const filteredNoms = [...nominations].filter(
       (items) => items.Title !== item.Title
     );
@@ -47,20 +54,25 @@ function App() {
         <header className="app__header">
           <h1 className="app__heading">The Shoppies</h1>
         </header>
-        <SearchBar queryBySearch={queryBySearch} />
-        <section className="app__querySection">
-        <QueryList
-          queryResults={queryResults}
-          addToNominations={addToNominations}
-          nominations={nominations}
-          query={query}
+        <SearchBar
+          queryBySearch={queryBySearch}
+          setQueryResults={setQueryResults}
         />
-        <Nomiations nominations={nominations} removeNominee={removeNominee} />
+        <section className="app__querySection">
+          <QueryList
+            queryResults={queryResults}
+            addToNominations={addToNominations}
+            nominations={nominations}
+            query={query}
+          />
+          <Nomiations
+            nominations={nominations}
+            removeNominee={removeNominee}
+            queryResults={queryResults}
+          />
         </section>
       </main>
-      <footer>
-        {nominations.length > 4 && <Banner />}
-      </footer>
+      <footer>{nominations.length > 4 && <Banner />}</footer>
     </div>
   );
 }

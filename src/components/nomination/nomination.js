@@ -4,7 +4,8 @@ import './nomination.css';
 // react component
 export const Nominations = ({
   nominations,
-  removeNominee
+  removeNominee,
+  queryResults
 }) => {
 
   return (
