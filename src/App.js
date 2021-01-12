@@ -10,6 +10,8 @@ function App() {
   const [nominations, setNominations] = useState([]);
   const [query, setQuery] = useState("");
   const [queryResults, setQueryResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState({});
 
   const APP_KEY = "97b773a7";
   const url = `http://www.omdbapi.com/?apikey=${APP_KEY}&s=${query}`;
@@ -19,9 +21,16 @@ function App() {
   }, [query]);
 
   const fetchMovies = async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-    setQueryResults(data.Search);
+    try {
+      setLoading(true);
+      const response = await fetch(url);
+      const data = await response.json();
+      setQueryResults(data.Search);
+    } catch (err) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const queryBySearch = (value) => {
@@ -51,7 +60,7 @@ function App() {
   return (
     <div className="App">
       <main className="app__main">
-        <header className="app__header">
+        <header id="main" className="app__header">
           <h1 className="app__heading">The Shoppies</h1>
         </header>
         <SearchBar
@@ -60,6 +69,8 @@ function App() {
         />
         <section className="app__querySection">
           <QueryList
+            loading={loading}
+            error={error}
             queryResults={queryResults}
             addToNominations={addToNominations}
             nominations={nominations}

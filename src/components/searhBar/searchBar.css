@@ -3,15 +3,11 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
-  padding-bottom: 30px;
   box-shadow: 0px 6px 3px 0px rgba(0,0,0,0.63);
 }
 
-.search__heading {
-  text-align: center;
-}
-
 .search__form {
+  padding: 20px 0px;
   align-self: center;
   display: flex;
   width: 50%;
@@ -19,6 +15,7 @@
 
 .search__label {
   font-weight: 700;
+  font-family: "Bungee shade", cursive;
   text-transform: capitalize;
   padding: 0px 5px;
 }

@@ -2,16 +2,18 @@
   padding: 20px;
   width: 20%;
   overflow-y: scroll;
+  border-radius: 10px;
   box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.68);
 }
 
 .nomination__heading {
   margin: 0;
+  font-family: "Bungee shade", cursive;
 }
 
 .nomination__card {
   border: 3px solid #008060;
-  border-radius: 3px;
+  border-radius: 10px;
   padding: 0px 5px;
   display: flex;
   justify-content: space-between;
@@ -29,10 +31,11 @@
   background-color: #008060;
   cursor: pointer;
   padding: 10px;
-  border-radius: 3px;
+  border-radius: 5px;
   font-size: 14px;
   border: none;
 }
+
 
 .display-none {
   display: none;

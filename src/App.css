@@ -12,6 +12,7 @@
 }
 
 .app__header {
+  font-family: "Bungee shade", cursive;
   text-align: center;
 }
 
@@ -26,6 +27,6 @@
 
 .app__querySection {
   display: flex;
-  height: 65vh;
+  height: 70vh;
   justify-content: space-around;
 }

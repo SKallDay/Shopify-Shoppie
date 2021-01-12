@@ -19,7 +19,6 @@ export const SearchBar = ({
 
   return (
     <div className="search__container">
-      <h3 className="search__heading">Movie titles</h3>
       <form className="search__form" onSubmit={handleFormSumbit}>
         <label className="search__label" aria-label="Search for Movies">Search:</label>
         <input
