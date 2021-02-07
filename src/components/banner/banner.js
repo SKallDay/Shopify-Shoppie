@@ -1,14 +1,14 @@
 import React from 'react';
+import './banner.css';
 
-// react component
 export const Banner = ({
   nominations,
 }) => {
 
   return (
-   <>
-    <p>Banner</p>
-   </>
+   <div className="banner__container">
+    <p>You've Selected {nominations.length} Nominations</p>
+   </div>
   );
 };
 

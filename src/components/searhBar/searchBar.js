@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./searchBar.css";
 
-// react component
 export const SearchBar = ({ 
   queryBySearch
  }) => {

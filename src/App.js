@@ -33,14 +33,14 @@ function App() {
     }
   };
 
-  const queryBySearch = (value) => {
+  const queryBySearch = value => {
     setQuery(value);
   };
 
-  const addToNominations = (item) => {
+  const addToNominations = item => {
     if (nominations.length < 5) {
-      const Noms = [...nominations, item];
-      setNominations(Noms);
+      const newNominations = [...nominations, item];
+      setNominations(newNominations);
       swal(
         `${item.Title}`,
         "Has been added to your Nominations List!",
@@ -49,12 +49,12 @@ function App() {
     }
   };
 
-  const removeNominee = (item) => {
+  const removeNominee = item => {
     swal(`You removed ${item.Title} from your nominations`, "", "warning");
-    const filteredNoms = [...nominations].filter(
+    const filteredNominations = [...nominations].filter(
       (items) => items.Title !== item.Title
     );
-    setNominations(filteredNoms);
+    setNominations(filteredNominations);
   };
 
   return (
@@ -65,7 +65,6 @@ function App() {
         </header>
         <SearchBar
           queryBySearch={queryBySearch}
-          setQueryResults={setQueryResults}
         />
         <section className="app__querySection">
           <QueryList
@@ -79,11 +78,12 @@ function App() {
           <Nomiations
             nominations={nominations}
             removeNominee={removeNominee}
-            queryResults={queryResults}
           />
         </section>
       </main>
-      <footer>{nominations.length > 4 && <Banner />}</footer>
+      <footer>
+        {nominations.length > 4 && <Banner nominations={nominations} />}
+      </footer>
     </div>
   );
 }

@@ -9,20 +9,18 @@ export const QueryList = ({
   nominations,
   query,
   loading,
+  error,
 }) => {
-  const getNomination = (item) => {
-    addToNominations(item);
-  };
-
   return (
     <div className="query__container">
       <h3 className="query__heading">
         {query ? `Movies result for "${query}"  Found: ` : "Movie results:"}
       </h3>
-      {!queryResults && 
+      {!queryResults && (
         <div>
           <h4 className="query__text">Sorry No Movies found Yet ...</h4>
-        </div>}
+        </div>
+      )}
       {loading && (
         <div className="query__loadingState">
           <CircularProgress color="inherit" size={80} />
@@ -30,14 +28,13 @@ export const QueryList = ({
       )}
       <div className="query__itemCardContainer">
         {queryResults &&
-          queryResults.map((item) => (
-            <>
-              <ItemCard
-                item={item}
-                nominations={nominations}
-                getNomination={getNomination}
-              ></ItemCard>
-            </>
+          queryResults.map((item, index) => (
+            <ItemCard
+              key={index}
+              item={item}
+              nominations={nominations}
+              addToNominations={addToNominations}
+            />
           ))}
       </div>
     </div>

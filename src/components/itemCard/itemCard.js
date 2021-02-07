@@ -1,8 +1,7 @@
 import React from "react";
 import "./itemCard.css";
 
-// react component
-export const ItemCard = ({ item, nominations, getNomination }) => {
+export const ItemCard = ({ item, nominations, addToNominations }) => {
   return (
     <div className="itemCard__container">
       <img
@@ -16,7 +15,7 @@ export const ItemCard = ({ item, nominations, getNomination }) => {
       ) : (
         <button
           className="itemCard__button"
-          onClick={() => getNomination(item)}
+          onClick={() => addToNominations(item)}
         >
           Nominate
         </button>

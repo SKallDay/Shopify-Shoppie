@@ -1,0 +1,15 @@
+.banner__container {
+  z-index: 9;
+  height: 10vh;
+  position: absolute;
+  bottom: 0;
+  width: -webkit-fill-available;
+  background:#008060;
+  text-align: center;
+  font-family: "Bungee shade", cursive;
+  font-size: 2em;
+  padding: 15px 0px;
+  border: 10px double black;
+  border-radius: 10px;
+  color: #fbf7ed;
+}
