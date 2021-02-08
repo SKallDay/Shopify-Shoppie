@@ -11,9 +11,9 @@ export const Nominations = ({
     <h3 className="nomination__heading">Nominations</h3>
     {nominations &&
       nominations.map((item, index) => (
-        <div className="nomination__card" key={index} data-testid="data-test-nominations">
+        <div className="nomination__card" key={index} data-testid="nomination">
         <h5 className="nomination__text">{item.Title}</h5>
-        <button data-testid={index} className="button" onClick={() => removeNominee(item)}>
+        <button data-testid='remove-nominee' className="button" onClick={() => removeNominee(item)}>
           Remove
         </button>
         </div>

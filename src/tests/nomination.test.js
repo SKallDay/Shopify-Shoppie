@@ -11,14 +11,14 @@ test('renders component', () => {
 
 test('renders nominations tiles', () => {
   render(<Nominations nominations={nominations} />);
-  expect(screen.getAllByTestId('data-test-nominations').length).toBe(5);
+  expect(screen.getAllByTestId('nomination').length).toBe(5);
 });
 
 test('handles removeNominee prop', async () => {
   const removeNominee = jest.fn();
   render(<Nominations nominations={nominations} removeNominee={removeNominee}/>);
     
-  userEvent.click(screen.getByTestId(`0`))
+  userEvent.click(screen.getAllByTestId('remove-nominee')[0]);
 
   expect(removeNominee).toHaveBeenCalledTimes(1);
 });

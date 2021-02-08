@@ -16,7 +16,7 @@ test('handles addToNominations prop', async () => {
   const addToNominations = jest.fn();
   render(<ItemCard item={nominations[4]} nominations={[]} addToNominations={addToNominations}/>);
     
-  userEvent.click(screen.getByTestId('add-to-nominations'));
+  userEvent.click(screen.getByTestId(`add-to-nominations`));
 
   expect(addToNominations).toHaveBeenCalledTimes(1);
 });
