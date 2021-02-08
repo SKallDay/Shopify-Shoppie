@@ -23,7 +23,7 @@ export const QueryList = ({
       )}
       {loading && (
         <div className="query__loadingState">
-          <CircularProgress color="inherit" size={80} />
+          <CircularProgress color="inherit" size={80} data-testid="loading"/>
         </div>
       )}
       <div className="query__itemCardContainer">
