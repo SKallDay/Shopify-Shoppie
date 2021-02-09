@@ -17,21 +17,20 @@ function App() {
   const url = `http://www.omdbapi.com/?apikey=${APP_KEY}&s=${query}`;
 
   useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(url);
+        const data = await response.json();
+        setQueryResults(data.Search);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    };
     fetchMovies();
-  }, [query]);
-
-  const fetchMovies = async () => {
-    try {
-      setLoading(true);
-      const response = await fetch(url);
-      const data = await response.json();
-      setQueryResults(data.Search);
-    } catch (err) {
-      setError(err);
-    } finally {
-      setLoading(false);
-    }
-  };
+  }, [query, url]);
 
   const queryBySearch = value => {
     setQuery(value);
@@ -63,9 +62,7 @@ function App() {
         <header id="main" className="app__header">
           <h1 className="app__heading">The Shoppies</h1>
         </header>
-        <SearchBar
-          queryBySearch={queryBySearch}
-        />
+        <SearchBar queryBySearch={queryBySearch} />
         <section className="app__querySection">
           <QueryList
             loading={loading}
@@ -75,10 +72,7 @@ function App() {
             nominations={nominations}
             query={query}
           />
-          <Nomiations
-            nominations={nominations}
-            removeNominee={removeNominee}
-          />
+          <Nomiations nominations={nominations} removeNominee={removeNominee} />
         </section>
       </main>
       <footer>
