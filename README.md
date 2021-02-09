@@ -4,7 +4,7 @@ Search for movies and add them to your nominee list
 
 This project was bootstrapped with create-react-app.
 
-Supported by testin from React Testing Libary and Jest
+Supported by testing from React Testing Libary and Jest
 
 ## Setup
 Run this project locally by cloning repository.
