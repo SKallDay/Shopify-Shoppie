@@ -19,10 +19,11 @@
 .app__heading {
   font-size: 3em;
   padding: 20px 0px;
-  margin: 0;
+  max-width: 1300px;
+  margin: 0 auto;
   color: #008060;
-  border-top: 4px solid #008060;
-  border-bottom: 4px solid #008060;
+  background: #fbf7ed;
+  border-bottom: 10px double #008060;
 }
 
 .app__querySection {

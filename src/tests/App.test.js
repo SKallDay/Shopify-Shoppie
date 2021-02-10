@@ -1,4 +1,4 @@
-import { render, screen, act } from "@testing-library/react";
+import { render, screen, act, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "../App";
 import { queryList } from "./fakeData";
@@ -25,7 +25,7 @@ test("submits query", async () => {
 });
 
 test("displays queryResults", async () => {
-  global.fetch = jest.fn(() =>
+  const fetchMovies = global.fetch = jest.fn(() =>
     Promise.resolve({
       json: () =>
         Promise.resolve({
@@ -33,8 +33,10 @@ test("displays queryResults", async () => {
         }),
     })
   );
-  await act(async() => render(<App/>));
 
+  await act(async() => render(<App/>));
+  
+  await waitFor(() => expect(fetchMovies).toHaveBeenCalledTimes(1))
   expect(screen.getAllByTestId("item-card").length).toBe(5);
 });
 

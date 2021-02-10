@@ -58,10 +58,10 @@ function App() {
 
   return (
     <div className="App">
-      <main className="app__main">
-        <header id="main" className="app__header">
-          <h1 className="app__heading">The Shoppies</h1>
-        </header>
+      <header className="app__header">
+        <h1 className="app__heading">The Shoppies</h1>
+      </header>
+      <main role="main" className="app__main">
         <SearchBar queryBySearch={queryBySearch} />
         <section className="app__querySection">
           <QueryList
