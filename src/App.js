@@ -13,10 +13,11 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({});
 
-  const APP_KEY = "97b773a7";
-  const url = `http://www.omdbapi.com/?apikey=${APP_KEY}&s=${query}`;
 
   useEffect(() => {
+    const APP_KEY = "97b773a7";
+    const url = `http://www.omdbapi.com/?apikey=${APP_KEY}&s=${query}`;
+    
     const fetchMovies = async () => {
       try {
         setLoading(true);
@@ -30,7 +31,7 @@ function App() {
       }
     };
     fetchMovies();
-  }, [query, url]);
+  }, [query]);
 
   const queryBySearch = value => {
     setQuery(value);
