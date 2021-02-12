@@ -16,8 +16,8 @@ function App() {
 
   useEffect(() => {
     const APP_KEY = "97b773a7";
-    const url = `http://www.omdbapi.com/?apikey=${APP_KEY}&s=${query}`;
-    
+    const url = `https://www.omdbapi.com/?apikey=${APP_KEY}&s=${query}`;
+
     const fetchMovies = async () => {
       try {
         setLoading(true);
